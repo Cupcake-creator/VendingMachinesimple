@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&family=Sora:wght@200;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-family: "Sora", sans-serif;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 175px auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+}
+
+/* sidebar */
+.sidebar-content {
+  grid-area: sidebar;
+  position: absolute;
+  background: linear-gradient(
+      180deg,
+      rgb(255, 218, 255) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #aedea2;
+  mix-blend-mode: normal;
+  border-right: whitesmoke 1.25px solid;
+  max-width: 150px;
+  border-radius: 0px 45px 0px 0px;
+  overflow: hidden;
+}
+.item-sidebar {
+  width: 103px;
+  height: 103px;
+  background: #ffffff;
+  border-radius: 32px;
+  margin: 20px;
+  display: grid;
+  justify-self: center;
+  cursor: pointer;
+}
+.item-sidebar div{
+  justify-self: center;
+  align-self: center;
+}
+.item-sidebar:hover {
+  background: #7b60ff;
+}
+
+/* header */
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: flex-end;
+  height: 80px;
+  padding: 15px 5px;
+  background: linear-gradient(
+      270deg,
+      rgb(255, 218, 255) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #ffffff;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  align-self: start;
+}
+.header div {
+  cursor: pointer;
+}
+
+/* content */
+.container-content {
+  grid-area: main;
+  justify-content: center;
+  display: inline-flex;
+  flex-flow: row wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 2px rgb(255, 255, 255) solid;
+  align-self: start;
+  padding-top: 20px;
+}
+.item-content {
+  width: 180px;
+  height: 180px;
+  background: #7b60ff;
+  border-radius: 32px;
+  margin: 20px;
+  padding: 10px 25px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  font-size: 0.9rem;
+}
+.item-content:hover {
+  background: rgb(230, 227, 227);
+}
+
+.item-content div {
+  margin-right: 15px;
+  display: block;
+}
+
+.Modal-Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  display: flex;
+}
+.Modal-container {
+  position: relative;
+  background-color: #ffffff;
+  margin: 25px 60px;
+  z-index: 3;
+  max-height: 770px;
+  display: grid;
+  grid-template-areas:
+    "modal-header"
+    "modal-content"
+    "modal-form";
+  grid-gap: 20px;
+  border-radius: 32px;
+  overflow: auto;
+}
+
+.Modal-container-Header {
+  grid-area: modal-header;
+  padding: 20px 5px;
+  max-width: 100%;
+  margin: 0 20px;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.Modal-container-Header div {
+  justify-self: start;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.Modal-container-Header button {
+  justify-self: end;
+  list-style: none;
+}
+
+.Modal-container-Header button:hover {
+  color: #ee71ff;
+}
+
+.Exit-button {
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+  background-color: #ee71ff;
+  border-radius: 10px;
+}
+
+.Modal-container-Content {
+  grid-area: modal-content;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.Modal-container-Content img {
+  justify-self: center;
+  width: 50%;
+}
+
+.modal-description {
+  align-self: center;
+  justify-self: center;
+  font-size: 32px;
+  margin-bottom: 55px;
+}
+.modal-description div {
+  padding: 35px 40px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.formInput-money {
+  grid-area: modal-form;
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-self: start;
+  padding: 20px 20px;
+}
+
+.Input-items {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  max-width: 200px;
+  max-height: 75px;
+  background: inherit;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  font-size: 25px;
+}
+
+.Input-items div {
+  margin-left: 10px;
+  font-size: 30px;
+  justify-self: start;
+  background: rgb(99, 216, 84);
+  border-radius: 4px;
+  max-width: 150px;
+}
+
+.Input-items input {
+  border: none;
+  width: 75px;
+  box-sizing: inherit;
+  font-size: 25px;
+  justify-self: end;
+  cursor: pointer;
+  background-color: rgba(182, 182, 182, 0.651);
+  padding-left: 20px;
+}
+
+.Input-items input:hover {
+  border: rgba(182, 182, 182, 0.651);
+  background-color: white;
+}
+
+.Modal-container-Footer {
+  display: inline-flex;
+  overflow-wrap: break-word;
+}
+.Modal-container-Footer input {
+  justify-self: end;
+  margin: 25px 20px;
+  padding: 0 20px;
+  max-width: 500px;
+  max-height: 100px;
+  border-color: rgb(128, 161, 231);
+  border-radius: 10px;
+  background-color: none;
+}
+
+.Modal-container-Footer input:hover {
+  background-color: rgb(128, 161, 231);
+  border: none;
+}
+
+.manager-sidebar-content {
+  grid-area: sidebar;
+  position: fixed;
+  background: #5757578e;
+  border-right: whitesmoke 1.25px solid;
+  max-width: 175px;
+  width: 175px;
+  height: 1000px;
+  max-height: 1000px;
+  overflow: hidden;
+}
+
+.manager-sidebar-items {
+  width: 103px;
+  height: 75px;
+  background: #ffffff;
+  border-radius: 32px;
+  margin: 20px;
+  display: grid;
+  cursor: pointer;
+}
+.manager-sidebar-items div{
+  justify-self: center;
+  align-self: center;
+}
+.manager-sidebar-items:hover {
+  background: #7b60ff;
+}
+
+.Modal-Login-container {
+  position: relative;
+  background-color: #ffffff;
+  margin: 25px 60px;
+  z-index: 3;
+  max-height: 700px;
+  max-width: 500px;
+  display: grid;
+  border-radius: 32px;
+  overflow: auto;
+  margin-left: 40%;
+  width: 400px;
+}
+
+.form-login {
+  max-width: 80%;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  border: gray solid;
+  border-radius: 10px;
+  padding: 70px 5px;
+}
+
+.form-login input{
+  align-self: center;
+  justify-self: end;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-right: 30px;
+  border-radius: 4px;
+}
+
+.form-login input:hover{
+  background-color: rgb(230, 245, 255);
+}
+
+.form-input-login {
+  display: grid;
+  padding: 15px 20px;
+  
+}
+
+.form-input-login label{
+  padding: 7px 10px;
+}
+
+.form-input-login input{
+  margin: 10px;
+  font-size: 20px;
+  border-color: mediumslateblue;
+  border-radius: 5px;
+  background-color: inherit;
+
+}
+
+.stock-content {
+  grid-area: main;
+  justify-self: center;
+}
+
+.stock-items {
+  
+  margin: 20px;
+  padding: 10px 25px;
+  align-self: center;
+}
+.Stock-table tbody th{
+  border-bottom: rgb(100, 100, 100) solid 2px;
+}
+.Stock-table tbody tr:hover{
+  border-bottom: teal solid 2px;
+  background-color: yellowgreen;
+}
+
+.Stock-table tbody td input{
+  font-size: 15px;
+}
+
+.Modal-UpdateStock-Content {
+  grid-area: modal-content;
+  display: grid;
+}
+.form-Update-stock {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+}

@@ -82,6 +82,7 @@ export default function ModalnewProducts({ open, data, onClose }) {
                   type="number"
                   defaultValue=""
                   name="Price"
+                  min='0'
                   ref={register}
                 />
                 <label>Product Storage:</label>
@@ -89,6 +90,7 @@ export default function ModalnewProducts({ open, data, onClose }) {
                   type="number"
                   defaultValue=""
                   name="Storage"
+                  min='0'
                   ref={register}
                 />
                 <label>Product Image Link:</label>
